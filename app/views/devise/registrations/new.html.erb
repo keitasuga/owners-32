@@ -1,59 +1,47 @@
-  <div class="container signup_login_content text-center">
-    <div class="text-center mb-3">
-      <div class="container-fluid">
-       <div class="row">
-         <div class="col"></div>
-       </div>
+<div class="container signup_login_content align-content-center text-center">
+  <div class="text-center mb-3">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+        </div>
       </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
-      <div class="card-header">
-        オーナープランの申し込みには会員登録が必要です
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Facebookで登録する</li>
-        <li class="list-group-item">
-          <div class="field">
-            <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder:"性" %>
-          </div>
-        </li>
-        <li class="list-group-item">
-          <div class="field">
-            <%= f.text_field :first_name, autocomplete: "first_name", placeholder:"名前" %>
-          </div>
-        </li>
-        <li class="list-group-item">
-          <div class="field">
-            <%= f.email_field :email, autocomplete: "email", placeholder:"メールアドレス" %>
-          </div>
-        </li>
-        <li class="list-group-item">
-          <div class="field">
-            <%= f.label :password %>
-            <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %><br />
-            <%= f.password_field :password, autocomplete: "off", placeholder:"パスワード"%>
-            <div class="field">
-              <%= f.label :password_confirmation %><br />
-              <%= f.password_field :password_confirmation, autocomplete: "off", placeholder:"パスワードの確認"%>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item">
-          <div class="actions">
-            <%= f.submit "Sign up" %>
-          </div>
-        </li>
-      </ul>
-      <% end %>
-    </div>
-    <div class="form-login-group d-none d-lg-block">
-      <h5>すでに会員の方はこちら</h5>
-      <a href="/owners/login" class="button">
-        <%= render "devise/shared/links" %>
-      </a>
     </div>
   </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+    <div class="form-group-signup signup">
+      <h5> オーナープランのお申込みには<br class="d-lg-none"> 会員登録が必要です </h5>
+      <button class="btn btn_facebook" id="facebook_signup_button">
+         Facebook で会員登録する
+      </button>
+      <p> Facebookアカウントを<br class="d-lg-none"> お持ちでない方はこちら</p>
+      <div class="mx-auto email_signup_form mb-3">
+        <div class="field">
+            <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder:"姓", class:"form-control rounded-top" %>
+        </div>
+        <div class="field">
+            <%= f.text_field :first_name, autocomplete: "first_name", placeholder:"名前", class:"form-control rounded-top" %>
+          </div>
+        <div class="field">
+            <%= f.email_field :email, autocomplete: "email", placeholder:"メールアドレス", class:"form-control rounded-top" %>
+        </div>
+        <div class="field">
+            <% if @minimum_password_length %>
+            <em>(パスワードは<%= @minimum_password_length %> 文字以上です)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off", placeholder:"パスワード", class:"form-control rounded-top"%>
+        </div>
+        <div class="field">
+          <%= f.password_field :password_confirmation, autocomplete: "off", placeholder:"パスワードの確認", class:"form-control rounded-top"%>
+        </div>
+      </div>
+      <div class="actions">
+            <%= f.submit "メールアドレスで会員登録する", class:"btn signin-btn-email rounded-top"%>
+      </div>
+    </div>
+  <% end %>
+  <div class="form-group-signup d-none d-lg-block">
+    <h5>すでに会員の方はこちら</h5>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

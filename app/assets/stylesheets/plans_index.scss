@@ -294,10 +294,17 @@ header{
   }
 }
 
-.fb-like {
+.sns-share-buttons {
+  .twitter-share-button{
   float: right;
   margin-bottom: 20px;
   margin-right: 20px;
+  }
+  .fb-like{
+  float: right;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  }
 }
 
 footer {

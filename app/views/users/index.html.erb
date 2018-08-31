@@ -1,25 +1,28 @@
-  <div class="container signup_login_content text-center">
-    <div class="text-center mb-3">
-      <div class="container-fluid">
-       <div class="row">
-         <div class="col"></div>
-       </div>
+<div class="container signup_login_content align-content-center text-center">
+  <div class="text-center mb-3">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+        </div>
       </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <div class="card-header">
-        オーナープランの申し込みには会員登録が必要です
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Facebookで登録する</li>
-        <li class="list-group-item">性</li>
-        <li class="list-group-item">名</li>
-        <li class="list-group-item">メールアドレス</li>
-        <li class="list-group-item">メールアドレスで会員登録する</li>
-      </ul>
-    </div>
-    <div class="form-login-group d-none d-lg-block">
-      <h5>すでに会員の方はこちら</h5>
-      <a href="/owners/login" class="button"> ログイン </a>
     </div>
   </div>
+  <div class="form-group signup">
+    <h5> オーナープランのお申込みには<br class="d-lg-none"> 会員登録が必要です </h5>
+    <button class="btn btn_facebook" id="facebook_signup_button">
+      <i class="icon_btn_facebook"></i> Facebook で会員登録する
+    </button>
+    <p> Facebookアカウントを<br class="d-lg-none"> お持ちでない方はこちら</p>
+    <div class="mx-auto email_signup_form mb-3">
+      <input type="text" id="signup_family_name" name="family_name" class="form-control rounded-top" placeholder="姓" required="">
+      <input type="text" id="signup_given_name" name="given_name" class="form-control" placeholder="名" required="">
+      <input type="email" id="signup_email" name="email" class="form-control" placeholder="メールアドレス" required="">
+      <input type="password" id="signup_password" name="password" class="form-control" placeholder="パスワード" required="">
+    </div>
+    <button type="submit" class="btn btn_email"> <i class="icon_btn_email"></i> メールアドレスで会員登録する </button>
+  </div>
+  <div class="form-group d-none d-lg-block">
+    <h5>すでに会員の方はこちら</h5>
+    <a href="/owners/login" class="btn btn_green"> ログイン </a>
+  </div>
+</div>
